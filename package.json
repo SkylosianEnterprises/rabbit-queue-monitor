@@ -1,0 +1,33 @@
+{
+  "name": "monitor",
+  "description": "monitor node library",
+  "main": "index.js",
+  "author": "David Ihnen",
+  "version": "0.0.1-0",
+  "repository": {
+    "type": "svn",
+    "url": "http://github/SkylosianEnterprises/monitor"
+  },
+  "bugs": {
+    "url": "http://trac/trac/main/query?col=id&col=summary&col=status&col=type&col=priority&col=milestone&col=component&keywords=~rabbit-node-lib&order=priority"
+  },
+  "licenses": [
+    {
+      "type": "MANTA",
+      "url": "http://dogpawz.com/dont/steal/our/stuff"
+    }
+  ],
+  "dependencies": 
+    { "rabbit-node-lib": "git+ssh://git@github.com/SkylosianEnterprises/rabbit-node-lib.git" },
+  "devDependencies": {
+    "jasmine-node": "*",
+    "common-lib": "git+ssh://git@github.com/SkylosianEnterprises/nodejs-common-lib.git"
+  },
+  "scripts": {
+    "update": "npm pack ; ls *.tgz | tail --lines=1 | xargs -iDDD cp DDD event-relay-latest.tgz",
+    "test": "jasmine-node tests"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:8241"
+  }
+}
